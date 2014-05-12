@@ -1,7 +1,7 @@
 class Admin::AdminController < ApplicationController
   before_filter :admin_login_filter, :except => [:login, :check_login]
   before_filter :admin_logined_filter, :only => [:login]
-  before_filter :browser_filter
+  # before_filter :browser_filter
 
   def browser_filter
     if !(request.headers["User-Agent"].include?("Chromium") || request.headers['User-Agent'].include?("Chrome") ||
